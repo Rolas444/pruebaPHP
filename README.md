@@ -14,7 +14,7 @@ Este proyecto utiliza Docker y Docker Compose para configurar un entorno de desa
 
    ```sh
    git clone https://github.com/Rolas444/pruebaPHP.git
-   cd tu-repositorio
+   cd pruebaPHP
    ```
 2. Crea un archivo .env con el siguiente contenido:
 
