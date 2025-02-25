@@ -1,0 +1,35 @@
+# Composer dependencies
+/vendor/
+
+# Composer generated files
+/composer.lock
+
+# PHPUnit
+/phpunit.xml
+/phpunit.xml.dist
+/testdox.xml
+/coverage/
+
+# Environment variables
+/.env
+
+# Logs and temp files
+/logs/
+/tmp/
+/*.log
+
+# IDEs and editors
+/.idea/
+/.vscode/
+/nbproject/
+/*.swp
+/*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# PHPStorm
+/.idea/
+/*.iml
+/*.ipr
