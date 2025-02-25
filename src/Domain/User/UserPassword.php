@@ -25,4 +25,8 @@ class UserPassword {
     public function validate(string $password): bool {
         return password_verify($password, $this->hashedPassword);
     }
+
+    public function __toString(): string {
+        return $this->hashedPassword;
+    }
 }

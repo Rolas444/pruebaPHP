@@ -1,23 +1,26 @@
 <?php
 
-require_once __DIR__ . '/../../../vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 use Infrastructure\Event\EventDispatcher;
 use Application\EventListener\UserEventListener;
 use Application\UseCase\RegisterUserUseCase;
 use Domain\User\UserRepositoryInterface;
-use Infrastructure\Persistence\DoctrineUserRepository;
+use Infrastructure\Persistence\Doctrine\UserRepository as DoctrineUserRepository;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Domain\User\Event\UserRegisteredEvent;
 use Dotenv\Dotenv;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Tools\Setup;
+use Symfony\Component\Cache\Adapter\ArrayAdapter;
+use Doctrine\Common\Cache\Psr6\DoctrineProvider;
 
-// Cargar variables de entorno
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../../../');
-$dotenv->load();
+require __DIR__ . '/doctrine.php';
+
 
 // Crear el EntityManager
-$entityManager = getEntityManager(); // Asegúrate de tener esta función definida en tu configuración de Doctrine
+$entityManager = getEntityManager();
 
 // Crear el EventDispatcher
 $eventDispatcher = new EventDispatcher();

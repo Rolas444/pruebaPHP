@@ -12,7 +12,6 @@ use DateTimeImmutable;
 class User {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
      * @ORM\Column(type="string")
      */
     private $id;
